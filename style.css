@@ -1,0 +1,637 @@
+/* =========================================================
+   MADMAXANIME — COSMIC ANIME STREAMING STYLE
+   ========================================================= */
+
+
+/* ===================== RESET ===================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at 15% 20%, rgba(124, 60, 255, 0.25), transparent 30%),
+        radial-gradient(circle at 85% 25%, rgba(0, 183, 255, 0.18), transparent 30%),
+        radial-gradient(circle at 50% 90%, rgba(255, 43, 214, 0.15), transparent 35%),
+        #070512;
+
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+}
+
+
+/* ===================== STAR BACKGROUND ===================== */
+
+body::before {
+    content: "";
+
+    position: fixed;
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: 999;
+
+    background-image:
+        radial-gradient(circle, white 1px, transparent 1px),
+        radial-gradient(circle, #8c6cff 1px, transparent 1px),
+        radial-gradient(circle, #00e5ff 1px, transparent 1px);
+
+    background-size:
+        90px 90px,
+        140px 140px,
+        200px 200px;
+
+    background-position:
+        10px 20px,
+        50px 80px,
+        100px 40px;
+
+    opacity: 0.3;
+
+    animation: stars 20s linear infinite;
+}
+
+@keyframes stars {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(90px);
+    }
+}
+
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+.topbar {
+    width: 100%;
+    height: 75px;
+
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+
+    padding: 0 50px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #0b0618,
+            #120829,
+            #090b20
+        );
+
+    border-bottom: 1px solid rgba(124, 60, 255, 0.5);
+
+    box-shadow:
+        0 5px 30px rgba(124, 60, 255, 0.2);
+
+    position: relative;
+
+    z-index: 1000;
+
+    white-space: nowrap;
+}
+
+
+/* ===================== LOGO ===================== */
+
+.logo {
+    flex-shrink: 0;
+
+    color: white;
+
+    font-size: 24px;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+
+    margin-right: 55px;
+
+    text-shadow:
+        0 0 10px #7c3cff,
+        0 0 25px #7c3cff;
+}
+
+
+/* ===================== NAV ROW ===================== */
+
+.navbar {
+    display: flex !important;
+
+    flex-direction: row !important;
+
+    align-items: center !important;
+
+    justify-content: flex-start !important;
+
+    flex-wrap: nowrap !important;
+
+    gap: 30px;
+
+    white-space: nowrap;
+}
+
+
+.navbar a {
+    display: inline-block !important;
+
+    flex-shrink: 0;
+
+    color: #d8d3e8;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.5px;
+
+    transition: 0.3s ease;
+}
+
+
+.navbar a:hover {
+    color: #00e5ff;
+
+    text-shadow:
+        0 0 10px #00e5ff,
+        0 0 20px #00e5ff;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero {
+    width: 100%;
+    height: 650px;
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    overflow: hidden;
+}
+
+
+/* ===================== HERO IMAGE ===================== */
+
+.hero-img {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    z-index: 0;
+
+    display: block;
+}
+
+
+/* ===================== HERO DARK GRADIENT ===================== */
+
+.hero-dark {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 1;
+
+    background:
+        linear-gradient(
+            90deg,
+            #070512 0%,
+            rgba(7, 5, 18, 0.95) 18%,
+            rgba(7, 5, 18, 0.75) 40%,
+            rgba(7, 5, 18, 0.25) 75%,
+            rgba(7, 5, 18, 0.1) 100%
+        );
+}
+
+
+/* BOTTOM FADE */
+
+.hero-dark::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: 180px;
+
+    background:
+        linear-gradient(
+            transparent,
+            #070512
+        );
+}
+
+
+/* ===================== HERO CONTENT ===================== */
+
+.hero-content {
+    position: relative;
+
+    z-index: 2;
+
+    width: 550px;
+
+    margin-left: 8%;
+}
+
+
+/* SMALL TITLE */
+
+.hero-small {
+    color: #00e5ff;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 18px;
+
+    text-shadow:
+        0 0 10px rgba(0, 229, 255, 0.6);
+}
+
+
+/* MAIN TITLE */
+
+.hero h1 {
+    color: white;
+
+    font-size: 68px;
+
+    font-weight: 900;
+
+    line-height: 0.95;
+
+    letter-spacing: -2px;
+
+    margin-bottom: 25px;
+
+    text-shadow:
+        0 0 20px rgba(124, 60, 255, 0.4);
+}
+
+
+/* DESCRIPTION */
+
+.hero-description {
+    width: 420px;
+
+    color: #c3bdd4;
+
+    font-size: 16px;
+
+    line-height: 1.6;
+
+    margin-bottom: 30px;
+}
+
+
+/* ===================== EXPLORE BUTTON ===================== */
+
+.hero-button {
+    display: inline-block;
+
+    padding: 15px 30px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #7c3cff,
+            #ff2bd6
+        );
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 900;
+
+    border-radius: 5px;
+
+    box-shadow:
+        0 0 15px rgba(124, 60, 255, 0.6),
+        0 0 35px rgba(255, 43, 214, 0.3);
+
+    transition: 0.3s ease;
+}
+
+
+.hero-button:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 0 25px #7c3cff,
+        0 0 50px #ff2bd6;
+}
+
+
+/* =========================================================
+   TRENDING SECTION
+   ========================================================= */
+
+.section {
+    position: relative;
+
+    z-index: 2;
+
+    padding: 60px 7%;
+}
+
+
+/* SECTION TITLE */
+
+.section-title {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 28px;
+}
+
+
+.section-title h2 {
+    font-size: 27px;
+
+    font-weight: 900;
+
+    text-shadow:
+        0 0 15px rgba(124, 60, 255, 0.5);
+}
+
+
+.section-title span {
+    color: #00e5ff;
+
+    font-size: 12px;
+
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   ANIME CARDS
+   ========================================================= */
+
+.anime-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 22px;
+}
+
+
+.anime-card {
+    background:
+        linear-gradient(
+            145deg,
+            #15102b,
+            #0d0a18
+        );
+
+    border: 1px solid rgba(124, 60, 255, 0.3);
+
+    border-radius: 8px;
+
+    overflow: hidden;
+
+    transition: 0.3s ease;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+
+.anime-card:hover {
+    transform: translateY(-8px);
+
+    border-color: #7c3cff;
+
+    box-shadow:
+        0 0 25px rgba(124, 60, 255, 0.35);
+}
+
+
+/* CARD IMAGE */
+
+.anime-card img {
+    width: 100%;
+
+    height: 300px;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition: 0.3s ease;
+}
+
+
+.anime-card:hover img {
+    transform: scale(1.04);
+}
+
+
+/* CARD TEXT */
+
+.card-info {
+    padding: 16px;
+}
+
+
+.card-info h3 {
+    color: white;
+
+    font-size: 14px;
+
+    margin-bottom: 7px;
+}
+
+
+.card-info p {
+    color: #817b92;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+    position: relative;
+
+    z-index: 2;
+
+    text-align: center;
+
+    padding: 55px 20px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #080512,
+            #030208
+        );
+
+    border-top: 1px solid rgba(124, 60, 255, 0.3);
+}
+
+
+footer h3 {
+    color: white;
+
+    font-size: 20px;
+
+    margin-bottom: 10px;
+
+    text-shadow:
+        0 0 15px #7c3cff;
+}
+
+
+footer p {
+    color: #777084;
+
+    font-size: 12px;
+
+    margin-bottom: 15px;
+}
+
+
+footer small {
+    color: #4e4959;
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .topbar {
+        padding: 0 25px;
+    }
+
+    .logo {
+        margin-right: 30px;
+    }
+
+    .navbar {
+        gap: 20px;
+    }
+
+    .hero-content {
+        margin-left: 6%;
+    }
+
+    .hero h1 {
+        font-size: 55px;
+    }
+
+    .anime-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+}
+
+
+/* =========================================================
+   PHONE
+   ========================================================= */
+
+@media (max-width: 650px) {
+
+    .topbar {
+        height: 65px;
+
+        padding: 0 15px;
+
+        overflow-x: auto;
+    }
+
+    .logo {
+        font-size: 19px;
+
+        margin-right: 25px;
+    }
+
+    .navbar {
+        gap: 18px;
+    }
+
+    .navbar a {
+        font-size: 11px;
+    }
+
+    .hero {
+        height: 600px;
+    }
+
+    .hero-content {
+        width: 90%;
+
+        margin-left: 7%;
+    }
+
+    .hero h1 {
+        font-size: 43px;
+    }
+
+    .hero-description {
+        width: 90%;
+    }
+
+    .anime-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 12px;
+    }
+
+    .anime-card img {
+        height: 230px;
+    }
+}
